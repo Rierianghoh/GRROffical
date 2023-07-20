@@ -1,28 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Portfolio</title>
-  <link rel="stylesheet" href="./index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Web Developer</title>
+    <link rel="stylesheet" href="/index.css">
 </head>
-<body style="margin: 0;">
-  <iframe id="iframe" src="./header/header.html" frameborder="0" scrolling="no" style="width: 100%; height: 80px;"></iframe>
-  <main>
-    <div class="container">
-      <div class="profile">
-        <div class="profile-info">
-          <h1 class="hello">Hello, My Name Is </h1>
-          <h1 class="grr">Ghoh Rie Rian</h1>
-          <h2>And I'm a <span id="profession"></span></h2>
+<body>
+    <header>
+        <div class="header-content">
+            <!-- Move the Portfolio to the left side -->
+            <h1 class="h1-portfolio">Portfolio</h1>
+            <!-- Navigation Bar on the right -->
+            <nav>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#experiences">Experiences</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="profile-image">
-          <img src="./picture/your-photo.jpg" alt="Your Name">
-        </div>
-      </div>
-    </div>
-  </main>
+    </header>
 
-  <script src="./index.js"></script>
+    <section id="introduction">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-image">
+                    <img src="/picture/your-photo.jpg" alt="Ghoh Rie Rian">
+                </div>
+                <div class="intro-details">
+                    <h1>Hello, I'm Ghoh Rie Rian</h1>
+                    <p>I'm a <span id="profession" class="typing-text"></span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+         
+
+    <section id="experiences">
+        <div class="container">
+            <div class="experience">
+                <img src="sample-experience1.jpg" alt="Experience 1">
+                <h2>Web Developer at XYZ Company</h2>
+                <p>Responsible for developing and maintaining web applications using HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="experience">
+                <img src="sample-experience2.jpg" alt="Experience 2">
+                <h2>Frontend Developer at ABC Agency</h2>
+                <p>Collaborated with designers and backend developers to create responsive and user-friendly websites.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <div class="education">
+                <h2>Bachelor of Science in Computer Science</h2>
+                <p>University of Web Development</p>
+                <p>Graduated in 20XX</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <div class="skills">
+                <div class="skill">
+                    <p>HTML</p>
+                    <div class="progress">
+                        <div class="bar" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>CSS</p>
+                    <div class="progress">
+                        <div class="bar" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>JavaScript</p>
+                    <div class="progress">
+                        <div class="bar" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Email: john.doe@example.com</p>
+            <p>Phone: (123) 456-7890</p>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="./index.js"></script>
 </body>
 </html>

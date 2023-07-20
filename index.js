@@ -1,60 +1,81 @@
-const professions = ['Web Designer & Developer', 'Frontend Developer', 'UI/UX Designer'];
-let professionIndex = 0;
 
-function typeProfession() {
-  const professionSpan = document.getElementById('profession');
-  const profession = professions[professionIndex];
-  let charIndex = 0;
+// Smooth scrolling for navigation links
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll("nav a");
 
-  const typeInterval = setInterval(() => {
-    if (charIndex <= profession.length) {
-      professionSpan.textContent = profession.substr(0, charIndex);
-      charIndex++;
-    } else {
-      clearInterval(typeInterval);
-      setTimeout(deleteProfession, 1000);
+    for (const link of navLinks) {
+        link.addEventListener("click", clickHandler);
     }
-  }, 100);
-}
 
-function deleteProfession() {
-  const professionSpan = document.getElementById('profession');
-  let profession = professions[professionIndex];
-  let charIndex = profession.length;
-
-  const deleteInterval = setInterval(() => {
-    if (charIndex >= 0) {
-      professionSpan.textContent = profession.substr(0, charIndex);
-      charIndex--;
-    } else {
-      clearInterval(deleteInterval);
-      professionIndex = (professionIndex + 1) % professions.length;
-      typeProfession();
+    function clickHandler(e) {
+        e.preventDefault();
+        const href = this.getAttribute("href");
+        const offsetTop = document.querySelector(href).offsetTop;
+        scroll({
+            top: offsetTop,
+            behavior: "smooth"
+        });
     }
-  }, 50);
-}
-
-// Start the typing animation on page load
-document.addEventListener('DOMContentLoaded', () => {
-  typeProfession();
 });
 
-function updateActiveLink(href) {
-  const iframe = document.getElementById('iframe');
-  const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-  const links = iframeDocument.querySelectorAll('nav a');
+// JavaScript for the typing effect
+const professionText = document.getElementById("profession");
+const professions = ["Web Developer", "UI/UX Designer"]; // Add other professions here
+let professionIndex = 0;
+let charIndex = 0;
 
-  links.forEach(link => {
-    if (link.getAttribute('href') === href) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
+function type() {
+  if (charIndex < professions[professionIndex].length) {
+    professionText.textContent += professions[professionIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, 100); // Typing speed (adjust as needed)
+  } else {
+    setTimeout(erase, 1000); // Delay before erasing
+  }
 }
 
-// Add event listener to the iframe to update active link on page load
-document.getElementById('iframe').addEventListener('load', function() {
-  const currentHref = window.location.hash;
-  updateActiveLink(currentHref);
+function erase() {
+  if (charIndex > 0) {
+    professionText.textContent = professions[professionIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, 50); // Deleting speed (adjust as needed)
+  } else {
+    professionIndex = (professionIndex + 1) % professions.length;
+    setTimeout(type, 500); // Delay before typing the next profession
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(type, 1500); // Delay before starting the typing effect
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const introSection = document.getElementById("introduction");
+    const introContent = document.querySelector(".intro-content");
+    const introImage = document.querySelector(".intro-image");
+    const introDetails = document.querySelector(".intro-details");
+
+    // Function to check if the user is in the middle of the introduction section
+    function isInMiddleOfSection() {
+        const introRect = introSection.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Check if the middle of the section is within the window's viewport
+        return introRect.top <= windowHeight / 2 && introRect.bottom >= windowHeight / 2;
+    }
+
+    // Function to apply the animation classes based on the user's position
+    function animateIntroduction() {
+        if (isInMiddleOfSection()) {
+            introImage.classList.add("intro-come-together");
+            introDetails.classList.add("intro-come-together");
+        } else {
+            introImage.classList.remove("intro-come-together");
+            introDetails.classList.remove("intro-come-together");
+        }
+    }
+
+    // Check the user's position on page load and on scroll
+    animateIntroduction();
+    window.addEventListener("scroll", animateIntroduction);
 });
