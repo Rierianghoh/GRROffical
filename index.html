@@ -1,111 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe - Web Developer</title>
-    <link rel="stylesheet" href="/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <!-- Move the Portfolio to the left side -->
-            <h1 class="h1-portfolio">Portfolio</h1>
-            <!-- Navigation Bar on the right -->
-            <nav>
-                <ul>
-                    <li><a href="#introduction">Introduction</a></li>
-                    <li><a href="#experiences">Experiences</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contacts">Contacts</a></li>
-                </ul>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+            <div class="logo">
+                <h1>GRR</h1>
+            </div>
+            <ul class="menu">
+                <li><a href="#about-me">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
             </nav>
         </div>
     </header>
 
-    <section id="introduction">
+    <section class="introduction">
         <div class="container">
-            <div class="intro-content">
-                <div class="intro-image">
-                    <img src="/picture/your-photo.jpg" alt="Ghoh Rie Rian">
-                </div>
-                <div class="intro-details">
-                    <h1>Hello, I'm Ghoh Rie Rian</h1>
-                    <p>I'm a <span id="profession" class="typing-text"></span></p>
-                </div>
+          <div class="introduction-content">
+            <div class="introduction-text">
+              <h2>GHOH RIE RIAN</h2>
+              <p class="profession" id="profession"></p> <!-- Add a paragraph element for professions -->
             </div>
+            <div class="introduction-image">
+              <img src="/Photo.jpeg" alt="Your Photo">
+            </div>
+          </div>
         </div>
-    </section>
-         
-
-    <section id="experiences">
-        <div class="container">
-            <div class="experience">
-                <img src="sample-experience1.jpg" alt="Experience 1">
-                <h2>Web Developer at XYZ Company</h2>
-                <p>Responsible for developing and maintaining web applications using HTML, CSS, and JavaScript.</p>
-            </div>
-            <div class="experience">
-                <img src="sample-experience2.jpg" alt="Experience 2">
-                <h2>Frontend Developer at ABC Agency</h2>
-                <p>Collaborated with designers and backend developers to create responsive and user-friendly websites.</p>
-            </div>
-        </div>
+        <!-- Bubble effect -->
+        <div class="bubble-container" id="bubble-container"></div>
     </section>
 
-    <section id="education">
+    <section class="about-me">
         <div class="container">
-            <div class="education">
-                <h2>Bachelor of Science in Computer Science</h2>
-                <p>University of Web Development</p>
-                <p>Graduated in 20XX</p>
-            </div>
+          <div class="about-me-content">
+            <img src="/Photo.jpeg" alt="Your Picture" class="profile-picture-circular"> <!-- Add your picture here -->
+            <h2>About Me</h2>
+            <p>
+              Hi there! I'm [Your Name], a passionate front-end developer and UX designer.
+              I love creating beautiful and user-friendly websites that provide great experiences to users.
+              With a strong background in web technologies, I'm always excited to take on new challenges and learn from them.
+              When I'm not coding, you can find me exploring the latest design trends and seeking inspiration from various sources.
+              Let's collaborate and build something amazing together!
+            </p>
+            <a href="your_resume.pdf" download class="download-button">Download Resume (PDF)</a> <!-- Replace "your_resume.pdf" with the actual file path -->
+            <a href="your_resume.doc" download class="download-button">Download Resume (DOC)</a>
+        </div>
         </div>
     </section>
 
-    <section id="skills">
-        <div class="container">
-            <div class="skills">
-                <div class="skill">
-                    <p>HTML</p>
-                    <div class="progress">
-                        <div class="bar" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <p>CSS</p>
-                    <div class="progress">
-                        <div class="bar" style="width: 85%;"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <p>JavaScript</p>
-                    <div class="progress">
-                        <div class="bar" style="width: 80%;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <script src="/script.js"></script>
 
-    <section id="contacts">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Email: john.doe@example.com</p>
-            <p>Phone: (123) 456-7890</p>
-            <form action="#" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <script src="./index.js"></script>
 </body>
 </html>
