@@ -378,3 +378,208 @@
   color: #999;
   margin-bottom: 16px;
 }
+
+/* Skills section styles */
+.skills {
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  padding: 50px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Add vertical scroll if needed */
+}
+
+
+.section-title {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adjust spacing between skill cards */
+}
+
+
+
+.skill-card {
+  flex: 1 1 calc(33.33% - 20px); /* Adjust width of skill cards */
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.skill-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.skill-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.skill-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.skill-description {
+  text-align: center;
+  color: #666;
+}
+
+.skill-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  background-color: #333;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.skill-button:hover {
+  background-color: #555;
+}
+
+/* Education section styles */
+.education {
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  padding: 50px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column; /* Change to vertical layout */
+  gap: 20px;
+}
+
+.education-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row; /* Display details side by side */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.education-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.education-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.education-details {
+  flex: 1; /* Expand details to fill available space */
+}
+
+.education-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.education-institution {
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.education-date {
+  color: #999;
+  margin-bottom: 0; /* Remove margin to fit layout */
+}
+
+
+.contact {
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  padding: 50px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.contact-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  text-align: left;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-right: 20px;
+  color: #333;
+}
+
+.contact-info {
+  text-align: left;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.contact-item i {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #333;
+}
+
+.contact-email a,
+.contact-github a,
+.contact-linkedin a {
+  color: #333;
+  text-decoration: none;
+}
+
+.contact-email a:hover,
+.contact-github a:hover,
+.contact-linkedin a:hover {
+  color: #555;
+}
