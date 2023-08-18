@@ -78,7 +78,7 @@ function parallax() {
 
   setInterval(createBubble, 2000); // Create a new bubble every 2 seconds
 
-  const professions = ['Front-End Developer', 'UX Designer'];
+  const professions = ['Front-End Developer', 'Software Engineer', 'Network Engineer'];
   let professionIndex = 0;
   let professionElement = document.getElementById('profession');
   
