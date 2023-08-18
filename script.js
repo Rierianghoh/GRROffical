@@ -78,39 +78,87 @@ function parallax() {
 
   setInterval(createBubble, 2000); // Create a new bubble every 2 seconds
 
-  const professions = ['Front-End Developer', 'UX Designer']; // Add your professions here
+  const professions = ['Front-End Developer', 'UX Designer'];
   let professionIndex = 0;
   let professionElement = document.getElementById('profession');
+  let staticProfessionElement = document.getElementById('static-profession');
   
   function typeProfession() {
     const currentProfession = professions[professionIndex];
     let charIndex = 0;
-    
+  
     function type() {
       const text = currentProfession.slice(0, ++charIndex);
-      professionElement.textContent = text;
-
+      professionElement.textContent = 'I\'m a ' + text;
+  
       if (charIndex < currentProfession.length) {
         setTimeout(type, 100); // Adjust typing speed here (in milliseconds)
       } else {
         setTimeout(erase, 1500); // Wait for a while before erasing
       }
     }
-    
+  
     function erase() {
       const text = currentProfession.slice(0, --charIndex);
-      professionElement.textContent = text;
-
+      professionElement.textContent = 'I\'m a ' + text;
+  
       if (charIndex > 0) {
         setTimeout(erase, 50); // Adjust erasing speed here (in milliseconds)
       } else {
         professionIndex = (professionIndex + 1) % professions.length;
+        staticProfessionElement.textContent = 'I\'m a ' + professions[professionIndex];
         setTimeout(type, 500); // Wait for a while before typing the next profession
       }
     }
-    
+  
     type();
   }
   
   typeProfession(); // Start the typing effect
+  
 
+
+  const header = document.querySelector('.header');
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 0) {
+      header.classList.add('sticky');
+    } else {
+      header.classList.remove('sticky');
+    }
+  });
+  
+
+  const backToTopButton = document.querySelector('.back-to-top');
+const scrollDuration = 500; // Adjust scrolling duration (in milliseconds)
+
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 200) {
+    backToTopButton.classList.add('active');
+  } else {
+    backToTopButton.classList.remove('active');
+  }
+});
+
+backToTopButton.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const startPosition = window.pageYOffset;
+  const startTime = performance.now();
+
+  function scrollToTop(currentTime) {
+    const timeElapsed = currentTime - startTime;
+    const run = ease(timeElapsed, startPosition, -startPosition, scrollDuration);
+    window.scrollTo(0, run);
+    if (timeElapsed < scrollDuration) requestAnimationFrame(scrollToTop);
+  }
+
+  function ease(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
+  }
+
+  requestAnimationFrame(scrollToTop);
+});

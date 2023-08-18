@@ -73,6 +73,15 @@
     }
   }
   
+  .sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(240, 240, 240, 0.95); /* Add a background color for the sticky header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure the header appears above other elements */
+  }
   
   .header h1 {
     animation: fadeIn 1s ease;
@@ -310,16 +319,18 @@
   }
 
   /* Experience section styles */
-.experience {
-  height: 100vh;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #333;
-  padding: 50px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  .experience {
+    min-height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    padding: 50px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
 }
+
 
 .section-title {
   font-size: 36px;
@@ -335,14 +346,17 @@
 }
 
 .experience-card {
-  background-color: #f9f9f9; /* Update card background color */
+  flex: 1 1 calc(33.33% - 20px);
+  background-color: #f9f9f9;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
 }
+
 
 .experience-logo {
   width: 60px;
@@ -582,4 +596,35 @@
 .contact-github a:hover,
 .contact-linkedin a:hover {
   color: #555;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50%;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.back-to-top-button:hover {
+  background-color: #555;
 }
