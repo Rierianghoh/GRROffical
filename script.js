@@ -81,15 +81,15 @@ function parallax() {
   const professions = ['Front-End Developer', 'UX Designer'];
   let professionIndex = 0;
   let professionElement = document.getElementById('profession');
-  let staticProfessionElement = document.getElementById('static-profession');
   
   function typeProfession() {
-    const currentProfession = professions[professionIndex];
+    let prefix = "I'm a ";
+    let currentProfession = professions[professionIndex];
     let charIndex = 0;
   
     function type() {
       const text = currentProfession.slice(0, ++charIndex);
-      professionElement.textContent = 'I\'m a ' + text;
+      professionElement.textContent = prefix + text;
   
       if (charIndex < currentProfession.length) {
         setTimeout(type, 100); // Adjust typing speed here (in milliseconds)
@@ -100,13 +100,13 @@ function parallax() {
   
     function erase() {
       const text = currentProfession.slice(0, --charIndex);
-      professionElement.textContent = 'I\'m a ' + text;
+      professionElement.textContent = prefix + text;
   
       if (charIndex > 0) {
         setTimeout(erase, 50); // Adjust erasing speed here (in milliseconds)
       } else {
         professionIndex = (professionIndex + 1) % professions.length;
-        staticProfessionElement.textContent = 'I\'m a ' + professions[professionIndex];
+        currentProfession = professions[professionIndex];
         setTimeout(type, 500); // Wait for a while before typing the next profession
       }
     }
