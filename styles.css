@@ -356,8 +356,13 @@ display: flex;
 flex-direction: column;
 align-items: center;
 margin-bottom: 20px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
 .experience-logo {
 width: 60px;
@@ -434,6 +439,12 @@ display: flex;
 flex-direction: column;
 align-items: center;
 margin-bottom: 20px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+transform: translateY(-5px); /* Move the card up slightly on hover */
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .skill-icon {
@@ -500,13 +511,27 @@ gap: 20px;
 .education-card {
 background-color: #f9f9f9;
 padding: 20px;
-border-radius: 10px;
+border-radius: 8px;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 display: flex;
 flex-direction: row; /* Display details side by side */
 align-items: center;
 margin-bottom: 20px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.education-card:hover {
+transform: translateY(-5px); /* Move the card up slightly on hover */
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.education-card img {
+width: 60px; /* Adjust the size as needed */
+height: 60px; /* Keep it square */
+border-radius: 50%; /* Create a circular clipping effect */
+margin-right: 15px; /* Add spacing between image and content */
+}
+  
 
 .education-logo {
 width: 60px;
@@ -586,6 +611,35 @@ margin-right: 10px;
 color: #333;
 }
 
+/* Style for the contact me images container */
+.contact-methods {
+display: flex;
+gap: 20px; /* Adjust the gap between images as needed */
+}
+
+/* Style for each contact me image and text container */
+.contact-method {
+text-align: center;
+}
+
+/* Style for the contact me images */
+.contact-image {
+max-width: 50px; /* Set the maximum width you want */
+max-height: 50px; /* Set the maximum height you want */
+width: auto;
+height: auto;
+border: 2px solid black; /* Add a black border */
+margin-right: 10px; /* Add margin to the right */
+transition: transform 0.3s ease; /* Add a smooth transition on hover if desired */
+cursor: pointer;
+}
+
+
+/* Add a hover effect if desired */
+.contact-image:hover {
+transform: scale(1.1); /* Scale up slightly on hover */
+}
+  
 .contact-email a,
 .contact-github a,
 .contact-linkedin a {
@@ -628,4 +682,25 @@ transition: background-color 0.3s;
 
 .back-to-top-button:hover {
 background-color: #555;
+}
+
+.back-to-top-container {
+position: fixed;
+bottom: 30px;
+right: 30px;
+}
+
+/* Style for the back to top button */
+.back-to-top-image {
+max-width: 50px; /* Set the maximum width you want */
+max-height: 50px; /* Set the maximum height you want */
+width: auto;
+height: auto;
+transition: transform 0.3s ease; /* Add a smooth transition on hover if desired */
+cursor: pointer;
+}
+
+/* Add a hover effect if desired */
+.back-to-top-image:hover {
+transform: scale(1.1); /* Scale up slightly on hover */
 }
