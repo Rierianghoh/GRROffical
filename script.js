@@ -111,15 +111,15 @@ function typeProfession() {
 
 typeProfession(); // Start the typing effect
 
-const header = document.querySelector('.header');
+  // const header = document.querySelector('.header');
 
-window.addEventListener('scroll', function () {
-  if (window.scrollY > 0) {
-    header.classList.add('sticky');
-  } else {
-    header.classList.remove('sticky');
-  }
-});
+  // window.addEventListener('scroll', function () {
+  //   if (window.scrollY > 0) {
+  //     header.classList.add('sticky');
+  //   } else {
+  //     header.classList.remove('sticky');
+  //   }
+  // });
 
 const backToTopButton = document.querySelector('.back-to-top');
 const scrollDuration = 500;
@@ -153,4 +153,51 @@ backToTopButton.addEventListener('click', function (e) {
   }
 
   requestAnimationFrame(scrollToTop);
+});
+
+const mobileNavButton = document.querySelector('.mobile-nav-button');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+mobileNavButton.addEventListener('click', toggleMobileMenu);
+
+function toggleMobileMenu() {
+    mobileMenu.classList.toggle('active');
+}
+
+const mobileMenuLinks = document.querySelectorAll('.mobile-menu li a');
+
+mobileMenuLinks.forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const targetId = e.target.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    const headerHeight = document.querySelector('.header').offsetHeight;
+    const targetPosition = targetElement.getBoundingClientRect().top - headerHeight;
+    const startPosition = window.pageYOffset;
+    const scrollDuration = 1000;
+    const startTime = performance.now();
+
+    function scrollAnimation(currentTime) {
+      const timeElapsed = currentTime - startTime;
+      const run = ease(timeElapsed, startPosition, targetPosition, scrollDuration);
+      window.scrollTo(0, run);
+      if (timeElapsed < scrollDuration) {
+        requestAnimationFrame(scrollAnimation);
+      }
+    }
+
+    function ease(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(scrollAnimation);
+
+    // Close the mobile menu after clicking a link
+    const mobileMenu = document.querySelector('.mobile-menu');
+    mobileMenu.classList.remove('active');
+  });
 });

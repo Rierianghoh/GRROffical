@@ -22,6 +22,10 @@ body {
     padding: 0 20px;
 }
 
+.mobile-nav-button{
+    display:none;
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
@@ -50,6 +54,11 @@ body {
 
 .menu li a:hover {
     color: #555;
+}
+
+/* Hide the mobile navigation bar by default */
+.mobile-nav {
+    display: none;
 }
 
 @keyframes fadeIn {
@@ -326,6 +335,9 @@ body {
     padding: 50px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
+    opacity: 0; /* Initially set opacity to 0 for fade-in animation */
+    animation: fadeIn 1s forwards; /* Apply the fade-in animation */
+    animation-delay: 0.5s;
 }
 
 .section-title {
@@ -405,6 +417,9 @@ body {
     padding: 50px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow-y: auto; /* Add vertical scroll if needed */
+    opacity: 0; /* Initially set opacity to 0 for fade-in animation */
+    animation: fadeIn 1s forwards; /* Apply the fade-in animation */
+    animation-delay: 0.5s;
 }
 
 .section-title {
@@ -492,6 +507,9 @@ body {
     padding: 50px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
+    opacity: 0; /* Initially set opacity to 0 for fade-in animation */
+    animation: fadeIn 1s forwards; /* Apply the fade-in animation */
+    animation-delay: 0.5s;
 }
 
 .education-list {
@@ -569,6 +587,9 @@ body {
     padding: 50px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
+    opacity: 0; /* Initially set opacity to 0 for fade-in animation */
+    animation: fadeIn 1s forwards; /* Apply the fade-in animation */
+    animation-delay: 0.5s;
 }
 
 .contact-content {
@@ -693,4 +714,294 @@ body {
 /* Add a hover effect if desired */
 .back-to-top-image:hover {
     transform: scale(1.1); /* Scale up slightly on hover */
+}
+
+@media screen and (max-width: 768px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        color: black;
+        background-color: white;
+    }
+
+    /* Adjust header styles for mobile */
+    .header {
+        background-color: #f0f0f0;
+        padding: 0.5rem 0; /* Reduce padding for smaller screens */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+
+    .logo {
+        font-size: 20px; /* Adjust font size for smaller screens */
+        font-weight: 600;
+    }
+
+    /* Modify navigation menu for mobile */
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu {
+        list-style: none;
+        display: none; /* Hide menu items by default */
+        transition: transform 0.3s ease; /* Add smooth transition for mobile menu animation */
+    }
+
+    /* Add mobile menu button */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .menu.active {
+        display: flex; /* Show menu items when active class is added */
+        flex-direction: column;
+        background-color: #f0f0f0;
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        width: 100%;
+        z-index: 1; /* Ensure the menu is above other content */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 10px 0; /* Add padding between menu items */
+    }
+
+    /* Modify menu items for mobile */
+    .menu li {
+        margin: 10px 0; /* Add spacing between menu items */
+    }
+
+    .menu li a {
+        color: black;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    /* Update hover styles for mobile */
+    .menu li a:hover {
+        color: #555;
+    }
+
+    /* Adjust sticky header for mobile */
+    .sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(240, 240, 240, 0.95);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 0.5rem 0; /* Reduce padding for smaller screens */
+    }
+
+    /* Modify introduction section for mobile */
+    .introduction {
+        height: auto; /* Adjust height for content */
+        padding: 14rem 0; /* Add padding for spacing */
+        text-align: center; /* Center content */
+        opacity: 1; /* Set opacity to 1 by default */
+        background-position: center center; /* Center background image */
+    }
+
+    /* Update introduction text styles for mobile */
+    .introduction-text h2 {
+        font-size: 36px; /* Adjust font size for smaller screens */
+        margin-bottom: 12px; /* Adjust margin for spacing */
+    }
+
+    /* Update introduction image styles for mobile */
+    .introduction-image {
+        margin: 20px 0; /* Adjust margin for spacing */
+    }
+
+    /* Modify about me section for mobile */
+    .about-me {
+        height: auto; /* Adjust height for content */
+        padding: 6rem 0; /* Add padding for spacing */
+        color: #745f5f;
+        background-color: #f9f9f9;
+    }
+
+    /* Update about me text styles for mobile */
+    .about-me h2 {
+        font-size: 28px; /* Adjust font size for smaller screens */
+        margin-bottom: 12px; /* Adjust margin for spacing */
+    }
+
+    /* Update profile picture styles for mobile */
+    .profile-picture-circular {
+        width: 150px; /* Adjust size for smaller screens */
+        height: 150px; /* Keep it square */
+        margin-bottom: 10px; /* Adjust margin for spacing */
+    }
+
+    /* Modify experience section for mobile */
+    .experience {
+        min-height: auto; /* Adjust height for content */
+        padding: 4rem 0; /* Add padding for spacing */
+        color: #333;
+        background-color: #fff;
+    }
+
+    /* Update experience card styles for mobile */
+    .experience-card {
+        flex: 1 1 100%; /* Make cards full width on mobile */
+        margin-bottom: 20px; /* Adjust margin for spacing */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Modify skills section for mobile */
+    .skills {
+        min-height: auto; /* Adjust height for content */
+        padding: 4rem 0; /* Add padding for spacing */
+        background-color: #f9f9f9;
+    }
+
+    /* Update skill card styles for mobile */
+    .skill-card {
+        flex: 1 1 100%; /* Make cards full width on mobile */
+        margin-bottom: 20px; /* Adjust margin for spacing */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Modify education section for mobile */
+    .education {
+        min-height: auto; /* Adjust height for content */
+        padding: 4rem 0; /* Add padding for spacing */
+        color: #333;
+        background-color: #fff;
+    }
+
+    /* Update education card styles for mobile */
+    .education-card {
+        flex: 1 1 100%; /* Make cards full width on mobile */
+        margin-bottom: 20px; /* Adjust margin for spacing */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Modify contact section for mobile */
+    .contact {
+        min-height: auto; /* Adjust height for content */
+        padding: 4rem 0; /* Add padding for spacing */
+        background-color: #f9f9f9;
+    }
+
+    /* Update contact info styles for mobile */
+    .contact-item i {
+        font-size: 20px; /* Adjust icon size for smaller screens */
+        margin-right: 8px; /* Adjust margin for spacing */
+    }
+
+    .contact-content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        text-align: left;
+        flex-direction: column;
+    }
+
+    /* Modify back to top button for mobile */
+    .back-to-top {
+        position: fixed;
+        bottom: 10px; /* Adjust position for smaller screens */
+        right: 10px; /* Adjust position for smaller screens */
+    }
+
+    /* Update back to top button styles for mobile */
+    .back-to-top.active {
+        opacity: 1; /* Show the button when active */
+        transform: translateY(0); /* Move the button up when active */
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    /* Adjust styles for the mobile menu */
+    .mobile-menu {
+        list-style: none;
+        padding: 0;
+        background-color: #f0f0f0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .mobile-menu.active {
+        transform: translateX(0);
+    }
+
+    .mobile-menu li {
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .mobile-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-menu li a {
+        color: black;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .mobile-menu li a:hover {
+        color: #555;
+    }
+
+    /* Style for the mobile navigation button */
+    .mobile-nav-button {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1001; /* Ensure the button is above the header */
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        font-size: 24px;
+        color: #333;
+        transition: color 0.3s ease;
+    }
+
+    .mobile-nav-button:hover {
+        color: #555;
+    }
+
+    /* Style the menu icon using Font Awesome (you can use your own icon font as well) */
+    .mobile-nav-button::before {
+        content: '\2630'; /* Unicode for the hamburger icon in Font Awesome */
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+    }
+
+    /* Rotate the menu icon when the mobile menu is active */
+    .mobile-menu.active + .mobile-nav-button::before {
+        transform: rotate(90deg);
+    }
+
 }
