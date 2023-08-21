@@ -41,7 +41,6 @@ function rotateLogo() {
 
 const introduction = document.querySelector('.introduction');
 
-
 window.addEventListener('load', function() {
   introduction.classList.add('active');
 });
@@ -54,83 +53,76 @@ function parallax() {
   introduction.style.backgroundPositionY = -(scrolled * 0.4) + 'px';
 }
 
- // ... (previous JavaScript code remains the same) ...
+// JavaScript for real bubble effect
+const bubbleContainer = document.getElementById('bubble-container');
 
-  // JavaScript for real bubble effect
-  const bubbleContainer = document.getElementById('bubble-container');
-
-  function createBubble() {
-    const bubble = document.createElement('div');
-    bubble.classList.add('bubble');
-    bubble.style.top = `${Math.random() * 100}%`;
-    bubble.style.left = `${Math.random() * 100}%`;
-    bubble.style.width = `${Math.random() * 20 + 10}px`;
-    bubble.style.height = bubble.style.width;
-    bubble.style.animationDuration = `${Math.random() * 3 + 2}s`;
-    bubble.style.animationDelay = `${Math.random() * 2}s`;
-
-    bubbleContainer.appendChild(bubble);
-
-    bubble.addEventListener('animationiteration', () => {
-      bubbleContainer.removeChild(bubble);
-    });
-  }
-
-  setInterval(createBubble, 2000); // Create a new bubble every 2 seconds
-
-  const professions = ['Front-End Developer', 'Software Engineer', 'Network Engineer'];
-  let professionIndex = 0;
-  let professionElement = document.getElementById('profession');
-  
-  function typeProfession() {
-    let prefix = "I'm a ";
-    let currentProfession = professions[professionIndex];
-    let charIndex = 0;
-  
-    function type() {
-      const text = currentProfession.slice(0, ++charIndex);
-      professionElement.textContent = prefix + text;
-  
-      if (charIndex < currentProfession.length) {
-        setTimeout(type, 100); // Adjust typing speed here (in milliseconds)
-      } else {
-        setTimeout(erase, 1500); // Wait for a while before erasing
-      }
-    }
-  
-    function erase() {
-      const text = currentProfession.slice(0, --charIndex);
-      professionElement.textContent = prefix + text;
-  
-      if (charIndex > 0) {
-        setTimeout(erase, 50); // Adjust erasing speed here (in milliseconds)
-      } else {
-        professionIndex = (professionIndex + 1) % professions.length;
-        currentProfession = professions[professionIndex];
-        setTimeout(type, 500); // Wait for a while before typing the next profession
-      }
-    }
-  
-    type();
-  }
-  
-  typeProfession(); // Start the typing effect
-  
-
-
-  const header = document.querySelector('.header');
-
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 0) {
-      header.classList.add('sticky');
-    } else {
-      header.classList.remove('sticky');
-    }
+function createBubble() {
+  const bubble = document.createElement('div');
+  bubble.classList.add('bubble');
+  bubble.style.top = `${Math.random() * 100}%`;
+  bubble.style.left = `${Math.random() * 100}%`;
+  bubble.style.width = `${Math.random() * 20 + 10}px`;
+  bubble.style.height = bubble.style.width;
+  bubble.style.animationDuration = `${Math.random() * 3 + 2}s`;
+  bubble.style.animationDelay = `${Math.random() * 2}s`;
+  bubbleContainer.appendChild(bubble);
+  bubble.addEventListener('animationiteration', () => {
+    bubbleContainer.removeChild(bubble);
   });
-  
+}
 
-  const backToTopButton = document.querySelector('.back-to-top');
-const scrollDuration = 500; // Adjust scrolling duration (in milliseconds)
+setInterval(createBubble, 2000); // Create a new bubble every 2 seconds
+
+const professions = ['Front-End Developer', 'Software Engineer', 'Network Engineer'];
+let professionIndex = 0;
+let professionElement = document.getElementById('profession');
+
+function typeProfession() {
+  let prefix = "I'm a ";
+  let currentProfession = professions[professionIndex];
+  let charIndex = 0;
+
+  function type() {
+    const text = currentProfession.slice(0, ++charIndex);
+    professionElement.textContent = prefix + text;
+
+    if (charIndex < currentProfession.length) {
+      setTimeout(type, 100);
+    } else {
+      setTimeout(erase, 1500); // Wait for a while before erasing
+    }
+  }
+
+  function erase() {
+    const text = currentProfession.slice(0, --charIndex);
+    professionElement.textContent = prefix + text;
+
+    if (charIndex > 0) {
+      setTimeout(erase, 50);
+    } else {
+      professionIndex = (professionIndex + 1) % professions.length;
+      currentProfession = professions[professionIndex];
+      setTimeout(type, 500); // Wait for a while before typing the next profession
+    }
+  }
+
+  type();
+}
+
+typeProfession(); // Start the typing effect
+
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 0) {
+    header.classList.add('sticky');
+  } else {
+    header.classList.remove('sticky');
+  }
+});
+
+const backToTopButton = document.querySelector('.back-to-top');
+const scrollDuration = 500;
 
 window.addEventListener('scroll', function () {
   if (window.scrollY > 200) {

@@ -1,362 +1,357 @@
-/* Reset some default styles */
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-font-family: 'Poppins', sans-serif;
-color: black;
-background-color: white;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    background-color: white;
 }
 
 .header {
-background-color: #f0f0f0;
-padding: 1rem 0;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f0f0f0;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-font-size: 24px;
-font-weight: 600;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .menu {
-list-style: none;
-display: flex;
+    list-style: none;
+    display: flex;
 }
 
 .menu li {
-margin-left: 20px;
+    margin-left: 20px;
 }
 
 .menu li a {
-color: black;
-text-decoration: none;
-transition: color 0.3s ease;
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .menu li a:hover {
-color: #555;
+    color: #555;
 }
 
 @keyframes fadeIn {
-from {
-opacity: 0;
-transform: translateY(-10px);
-}
-to {
-opacity: 1;
-transform: translateY(0);
-}
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes rotateLogo {
-from {
-transform: rotateY(0);
-}
-to {
-transform: rotateY(360deg);
-}
+    from {
+        ransform: rotateY(0);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
 }
 
 .sticky {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-background-color: rgba(240, 240, 240, 0.95); /* Add a background color for the sticky header */
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-z-index: 1000; /* Ensure the header appears above other elements */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(240, 240, 240, 0.95); /* Add a background color for the sticky header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure the header appears above other elements */
 }
 
 .header h1 {
-animation: fadeIn 1s ease;
+    animation: fadeIn 1s ease;
 }
 
 .menu li a {
-position: relative;
-transition: color 0.3s ease;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
 .menu li a::after {
-content: '';
-position: absolute;
-bottom: -2px;
-left: 0;
-width: 100%;
-height: 2px;
-background-color: #555;
-transform: scaleX(0);
-transform-origin: right;
-transition: transform 0.3s ease;
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #555;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
 }
 
 .menu li a:hover {
-color: #555;
+    color: #555;
 }
 
 .menu li a:hover::after {
-transform: scaleX(1);
-transform-origin: left;
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 
 .introduction {
-height: 100vh;
-background-color: white; /* Change the background color to white */
-display: flex;
-justify-content: center;
-align-items: center;
-opacity: 0; /* Initially set the opacity to 0 for the slide-in animation */
-position: relative; /* Add position relative to allow positioning of the bubbles */
-overflow: hidden; /* Hide overflowing bubbles */
-color: #333; /* Change the text color to fit the background */
+    height: 100vh;
+    background-color: white; /* Change the background color to white */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially set the opacity to 0 for the slide-in animation */
+    position: relative; /* Add position relative to allow positioning of the bubbles */
+    overflow: hidden; /* Hide overflowing bubbles */
+    color: #333; /* Change the text color to fit the background */
 }
 
 .introduction.active {
-opacity: 1; /* When the introduction becomes active, set opacity to 1 */
+    opacity: 1; /* When the introduction becomes active, set opacity to 1 */
 }
 
 .introduction-content {
-display: flex;
-flex-direction: row;
-align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .introduction-text {
-text-align: center;
-opacity: 0; /* Initially set the opacity to 0 for the fade-in animation */
-animation: fadeInText 1s forwards; /* Apply the fade-in animation */
+    text-align: center;
+    opacity: 0; /* Initially set the opacity to 0 for the fade-in animation */
+    animation: fadeInText 1s forwards; /* Apply the fade-in animation */
 }
 
 .introduction-text h2 {
-font-size: 48px;
-font-weight: 600;
-margin-bottom: 16px;
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .introduction-text p {
-font-size: 24px;
-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .introduction-image {
-margin-left: 50px;
-opacity: 0; /* Initially set the opacity to 0 for the fade-in animation */
-animation: fadeInImage 1s forwards; /* Apply the fade-in animation */
-
+    margin-left: 50px;
+    opacity: 0; /* Initially set the opacity to 0 for the fade-in animation */
+    animation: fadeInImage 1s forwards; /* Apply the fade-in animation */
 }
 
 .introduction-image img {
-width: 200px;
-height: 200px;
-border-radius: 50%;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth animation */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth animation */
 }
 
 .introduction-image img:hover {
-transform: scale(1.1) rotate(5deg); /* Enlarge and rotate the image on hover */
-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add a box-shadow for 3D-like effect */
+    transform: scale(1.1) rotate(5deg); /* Enlarge and rotate the image on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add a box-shadow for 3D-like effect */
 }
 
 @keyframes fadeInImage {
-from {
-opacity: 0;
-}
-to {
-opacity: 1;
-}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* CSS animations */
 @keyframes slideIn {
-from {
-transform: translateX(-100%);
-}
-to {
-transform: translateX(0);
-}
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
 
 @keyframes fadeInText {
-from {
-opacity: 0;
-transform: translateY(-20px);
-}
-to {
-opacity: 1;
-transform: translateY(0);
-}
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Bubble effect */
 .bubble {
-position: absolute;
-width: 20px;
-height: 20px;
-background-color: rgba(226, 220, 220, 0.6);
-border-radius: 50%;
-animation: floatBubble 4s infinite linear; /* Apply the bubble animation */
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(226, 220, 220, 0.6);
+    border-radius: 50%;
+    animation: floatBubble 4s infinite linear; /* Apply the bubble animation */
 }
 
 @keyframes floatBubble {
-0% {
-transform: translateY(0);
-}
-50% {
-transform: translateY(-100px);
-}
-100% {
-transform: translateY(0);
-}
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .bubble-container {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-pointer-events: none; /* Ignore pointer events so that bubbles don't interfere with other elements */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ignore pointer events so that bubbles don't interfere with other elements */
 }
 
 .bubble {
-position: absolute;
-width: 20px;
-height: 20px;
-background-color: #6f6f6f;
-border-radius: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #6f6f6f;
+    border-radius: 50%;
 }
 
 /* New CSS for About Me section */
 .about-me {
-height: 100vh; /* Fill up the screen */
-background-color: white;
-display: flex;
-justify-content: center;
-align-items: center;
-color: #745f5f;
-background-color: #f9f9f9; /* Add a light background color */
-padding: 50px 0; /* Add some padding for spacing */
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow for depth */
-
+    height: 100vh; /* Fill up the screen */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #745f5f;
+    background-color: #f9f9f9; /* Add a light background color */
+    padding: 50px 0; /* Add some padding for spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow for depth */
 }
 
 .about-me-content {
-max-width: 800px;
-text-align: center;
+    max-width: 800px;
+    text-align: center;
 }
 
 .about-me h2 {
-font-size: 36px;
-font-weight: 600;
-margin-bottom: 16px;
-color: #333; /* Specify text color */
-opacity: 0; /* Initially set opacity to 0 for fade-in animation */
-animation: fadeIn 1s forwards; /* Apply the fade-in animation */
-animation-delay: 0.5s; /* Delay the animation to create a stagger effect */
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #333; /* Specify text color */
+    opacity: 0; /* Initially set opacity to 0 for fade-in animation */
+    animation: fadeIn 1s forwards; /* Apply the fade-in animation */
+    animation-delay: 0.5s; /* Delay the animation to create a stagger effect */
 }
 
 .about-me p {
-font-size: 18px;
-line-height: 1.6;
-color: #444; /* Specify text color */
-opacity: 0; /* Initially set opacity to 0 for fade-in animation */
-animation: fadeIn 1s forwards; /* Apply the fade-in animation */
-animation-delay: 0.5s; /* Delay the animation to create a stagger effect */
-text-align: justify;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444; /* Specify text color */
+    opacity: 0; /* Initially set opacity to 0 for fade-in animation */
+    animation: fadeIn 1s forwards; /* Apply the fade-in animation */
+    animation-delay: 0.5s; /* Delay the animation to create a stagger effect */
+    text-align: justify;
 }
 
 .profile-picture-circular {
-width: 200px;
-height: 200px;
-border-radius: 50%; /* Circular shape with 50% border-radius */
-margin-bottom: 20px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-opacity: 0; /* Initially set the opacity to 0 for the fade-in effect */
-animation: fadeInImage 1s forwards; /* Apply the fade-in animation */
-transition: transform 0.3s ease;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Circular shape with 50% border-radius */
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    opacity: 0; /* Initially set the opacity to 0 for the fade-in effect */
+    animation: fadeInImage 1s forwards; /* Apply the fade-in animation */
+    transition: transform 0.3s ease;
 }
 
 .profile-picture-circular:hover {
-transform: rotate(360deg);
+    transform: rotate(360deg);
 }
 
-
 .download-button {
-display: inline-block;
-padding: 12px 24px;
-margin-top: 20px;
-font-size: 18px;
-text-decoration: none;
-color: #fff;
-background-color: #333;
-border-radius: 5px;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-margin-top: 5%; /* Adjust spacing between buttons */
-opacity: 0; /* Initially set opacity to 0 for fade-in animation */
-animation: fadeIn 1s forwards; /* Apply the fade-in animation */
-animation-delay: 1s; /* Delay the animation to create a stagger effect */
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 5%; /* Adjust spacing between buttons */
+    opacity: 0; /* Initially set opacity to 0 for fade-in animation */
+    animation: fadeIn 1s forwards; /* Apply the fade-in animation */
+    animation-delay: 1s; /* Delay the animation to create a stagger effect */
 }
 
 .download-button:hover {
-background-color: #555;
+    background-color: #555;
 }
 
 /* Experience section styles */
 .experience {
-min-height: 100vh;
-background-color: #fff;
-display: flex;
-flex-direction: column;
-align-items: center;
-color: #333;
-padding: 50px 0;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-overflow-y: auto;
+    min-height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    padding: 50px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
 }
 
-
 .section-title {
-font-size: 36px;
-font-weight: 600;
-text-align: center;
-margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .experience-cards {
-display: flex;
-flex-direction: column;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .experience-card {
-flex: 1 1 calc(33.33% - 20px);
-background-color: #f9f9f9;
-padding: 20px;
-border-radius: 10px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-bottom: 20px;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(33.33% - 20px);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .experience-card:hover {
@@ -365,342 +360,337 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .experience-logo {
-width: 60px;
-height: 60px;
-border-radius: 50%;
-overflow: hidden;
-margin-right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
 }
 
 .experience-logo img {
-width: 100%;
-height: 100%;
-object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .experience-details {
-text-align: left;
+    text-align: left;
 }
 
 .experience-title {
-font-size: 24px;
-font-weight: 600;
-margin-bottom: 8px;
-color: #333;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
 }
 
 .experience-company {
-color: #666;
-margin-bottom: 4px;
+    color: #666;
+    margin-bottom: 4px;
 }
 
 .experience-date {
-color: #999;
-margin-bottom: 16px;
+    color: #999;
+    margin-bottom: 16px;
 }
 
 /* Skills section styles */
 .skills {
-min-height: 100vh;
-background-color: #f9f9f9;
-display: flex;
-justify-content: center;
-align-items: center;
-color: #333;
-padding: 50px 0;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-overflow-y: auto; /* Add vertical scroll if needed */
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    padding: 50px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Add vertical scroll if needed */
 }
 
-
 .section-title {
-font-size: 36px;
-font-weight: 600;
-text-align: center;
-margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .skills-list {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 20px; /* Adjust spacing between skill cards */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between skill cards */
 }
 
-
-
 .skill-card {
-flex: 1 1 calc(33.33% - 20px); /* Adjust width of skill cards */
-background-color: white;
-padding: 20px;
-border-radius: 10px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-bottom: 20px;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(33.33% - 20px); /* Adjust width of skill cards */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-card:hover {
-transform: translateY(-5px); /* Move the card up slightly on hover */
-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Move the card up slightly on hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .skill-icon {
-width: 60px;
-height: 60px;
-border-radius: 50%;
-overflow: hidden;
-margin-bottom: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
 }
 
 .skill-icon img {
-width: 100%;
-height: 100%;
-object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .skill-title {
-font-size: 24px;
-font-weight: 600;
-margin-bottom: 8px;
-color: #333;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
 }
 
 .skill-description {
-text-align: center;
-color: #666;
+    text-align: center;
+    color: #666;
 }
 
 .skill-button {
-display: inline-block;
-padding: 10px 20px;
-font-size: 16px;
-text-decoration: none;
-color: white;
-background-color: #333;
-border-radius: 5px;
-transition: background-color 0.3s ease;
-margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background-color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
 .skill-button:hover {
-background-color: #555;
+    background-color: #555;
 }
 
 /* Education section styles */
 .education {
-min-height: 100vh;
-background-color: white;
-display: flex;
-justify-content: center;
-align-items: center;
-color: #333;
-padding: 50px 0;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-overflow-y: auto;
+    min-height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    padding: 50px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
 }
 
 .education-list {
-display: flex;
-flex-direction: column; /* Change to vertical layout */
-gap: 20px;
+    display: flex;
+    flex-direction: column; /* Change to vertical layout */
+    gap: 20px;
 }
 
 .education-card {
-background-color: #f9f9f9;
-padding: 20px;
-border-radius: 8px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-display: flex;
-flex-direction: row; /* Display details side by side */
-align-items: center;
-margin-bottom: 20px;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row; /* Display details side by side */
+    align-items: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .education-card:hover {
-transform: translateY(-5px); /* Move the card up slightly on hover */
-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Move the card up slightly on hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .education-card img {
-width: 60px; /* Adjust the size as needed */
-height: 60px; /* Keep it square */
-border-radius: 50%; /* Create a circular clipping effect */
-margin-right: 15px; /* Add spacing between image and content */
+    width: 60px; /* Adjust the size as needed */
+    height: 60px; /* Keep it square */
+    border-radius: 50%; /* Create a circular clipping effect */
+    margin-right: 15px; /* Add spacing between image and content */
 }
-  
 
 .education-logo {
-width: 60px;
-height: 60px;
-border-radius: 50%;
-overflow: hidden;
-margin-right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
 }
 
 .education-logo img {
-width: 100%;
-height: 100%;
-object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .education-details {
-flex: 1; /* Expand details to fill available space */
+    flex: 1; /* Expand details to fill available space */
 }
 
 .education-title {
-font-size: 24px;
-font-weight: 600;
-margin-bottom: 8px;
-color: #333;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
 }
 
 .education-institution {
-color: #666;
-margin-bottom: 4px;
+    color: #666;
+    margin-bottom: 4px;
 }
 
 .education-date {
-color: #999;
-margin-bottom: 0; /* Remove margin to fit layout */
+    color: #999;
+    margin-bottom: 0; /* Remove margin to fit layout */
 }
 
-
 .contact {
-min-height: 100vh;
-background-color: #f9f9f9;
-display: flex;
-justify-content: center;
-align-items: center;
-color: #333;
-padding: 50px 0;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-overflow-y: auto;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    padding: 50px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
 }
 
 .contact-content {
-display: flex;
-align-items: center;
-gap: 40px;
-text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
 }
 
 .section-title {
-font-size: 36px;
-font-weight: 600;
-margin-right: 20px;
-color: #333;
+    font-size: 36px;
+    font-weight: 600;
+    margin-right: 20px;
+    color: #333;
 }
 
 .contact-info {
-text-align: left;
+    text-align: left;
 }
 
 .contact-item {
-display: flex;
-align-items: center;
-margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
 }
 
 .contact-item i {
-font-size: 24px;
-margin-right: 10px;
-color: #333;
+    font-size: 24px;
+    margin-right: 10px;
+    color: #333;
 }
 
 /* Style for the contact me images container */
 .contact-methods {
-display: flex;
-gap: 20px; /* Adjust the gap between images as needed */
+    display: flex;
+    gap: 20px; /* Adjust the gap between images as needed */
 }
 
 /* Style for each contact me image and text container */
 .contact-method {
-text-align: center;
+    text-align: center;
 }
 
 /* Style for the contact me images */
 .contact-image {
-max-width: 50px; /* Set the maximum width you want */
-max-height: 50px; /* Set the maximum height you want */
-width: auto;
-height: auto;
-border: 2px solid black; /* Add a black border */
-margin-right: 10px; /* Add margin to the right */
-transition: transform 0.3s ease; /* Add a smooth transition on hover if desired */
-cursor: pointer;
+    max-width: 50px; /* Set the maximum width you want */
+    max-height: 50px; /* Set the maximum height you want */
+    width: auto;
+    height: auto;
+    border: 2px solid black; /* Add a black border */
+    margin-right: 10px; /* Add margin to the right */
+    transition: transform 0.3s ease; /* Add a smooth transition on hover if desired */
+    cursor: pointer;
 }
 
 
 /* Add a hover effect if desired */
 .contact-image:hover {
-transform: scale(1.1); /* Scale up slightly on hover */
+    transform: scale(1.1); /* Scale up slightly on hover */
 }
-  
+
 .contact-email a,
 .contact-github a,
 .contact-linkedin a {
-color: #333;
-text-decoration: none;
+    color: #333;
+    text-decoration: none;
 }
 
 .contact-email a:hover,
 .contact-github a:hover,
 .contact-linkedin a:hover {
-color: #555;
+    color: #555;
 }
 
 .back-to-top {
-position: fixed;
-bottom: 20px;
-right: 20px;
-opacity: 0;
-visibility: hidden;
-transition: opacity 0.3s, visibility 0.3s;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
 }
 
 .back-to-top.active {
-opacity: 1;
-visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
 .back-to-top-button {
-display: flex;
-align-items: center;
-justify-content: center;
-width: 40px;
-height: 40px;
-background-color: #333;
-border-radius: 50%;
-text-decoration: none;
-color: white;
-transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s;
 }
 
 .back-to-top-button:hover {
-background-color: #555;
+    background-color: #555;
 }
 
 .back-to-top-container {
-position: fixed;
-bottom: 30px;
-right: 30px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
 }
 
 /* Style for the back to top button */
 .back-to-top-image {
-max-width: 50px; /* Set the maximum width you want */
-max-height: 50px; /* Set the maximum height you want */
-width: auto;
-height: auto;
-transition: transform 0.3s ease; /* Add a smooth transition on hover if desired */
-cursor: pointer;
+    max-width: 50px; /* Set the maximum width you want */
+    max-height: 50px; /* Set the maximum height you want */
+    width: auto;
+    height: auto;
+    transition: transform 0.3s ease; /* Add a smooth transition on hover if desired */
+    cursor: pointer;
 }
 
 /* Add a hover effect if desired */
 .back-to-top-image:hover {
-transform: scale(1.1); /* Scale up slightly on hover */
+    transform: scale(1.1); /* Scale up slightly on hover */
 }
